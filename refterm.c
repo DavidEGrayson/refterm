@@ -1,4 +1,4 @@
-#if !_M_X64
+#if !_WIN64
 #error refterm requires a 64-bit platform
 #endif
 

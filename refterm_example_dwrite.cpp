@@ -186,7 +186,8 @@ extern "C" void DWriteDrawText(glyph_generator *GlyphGen, int StringLen, WCHAR *
     RenderTarget->BeginDraw();
     RenderTarget->Clear();
     RenderTarget->DrawText(String, StringLen, GlyphGen->TextFormat, &Rect, FillBrush,
-                           D2D1_DRAW_TEXT_OPTIONS_CLIP|D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT, DWRITE_MEASURING_MODE_NATURAL);
+                           (D2D1_DRAW_TEXT_OPTIONS)(D2D1_DRAW_TEXT_OPTIONS_CLIP|D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT),
+                           DWRITE_MEASURING_MODE_NATURAL);
     HRESULT Error = RenderTarget->EndDraw();
     if(!SUCCEEDED(Error))
     {
